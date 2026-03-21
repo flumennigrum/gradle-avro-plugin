@@ -40,6 +40,6 @@ tasks.withType<Test> {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17)) // Recommended baseline for Gradle 8/9
+        languageVersion.set(JavaLanguageVersion.of(11)) // Recommended baseline for Gradle 8/9
     }
 }
