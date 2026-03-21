@@ -10,16 +10,8 @@ A Gradle plugin that wraps Apache Avro to generate Java classes from `.avsc` fil
 
 ### Applying the Plugin
 
-Add the plugin to your `build.gradle` or `build.gradle.kts` file:
+Add the plugin to your `build.gradle.kts` file:
 
-Groovy:
-```groovy
-plugins {
-    id("io.github.flumennigrum.gradle.avro") version "0.1.0"
-}
-```
-
-Kotlin:
 ```kotlin
 plugins {
     id("io.github.flumennigrum.gradle.avro") version "0.1.0"
@@ -37,18 +29,6 @@ If your project structure follows the default values, you're good to go, no more
 
 If you need to change the default values, you can configure the plugin using the `avro` extension block:
 
-Groovy:
-```groovy
-avro {
-    // Input directory for Avro schema files (.avsc)
-    source.from("src/main/custom-avro-directory")
-    
-    // Output directory for generated Java sources
-    outputDir.set(layout.buildDirectory.dir("generated/source/custom-avro-directory/main"))
-}
-```
-
-Kotlin:
 ```kotlin
 avro {
     // Input directory for Avro schema files (.avsc)
