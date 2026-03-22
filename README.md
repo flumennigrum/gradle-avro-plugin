@@ -1,6 +1,6 @@
 # WORK IN PROGRESS
 
-Still not published.
+Still not published
 
 # Gradle Avro Plugin
 
