@@ -1,6 +1,7 @@
 plugins {
     `java-gradle-plugin`
     `maven-publish`
+    id("com.gradle.plugin-publish") version "1.2.1"
 }
 
 group = "io.github.flumennigrum.gradle"
@@ -24,12 +25,15 @@ dependencies {
 }
 
 gradlePlugin {
+    website.set("https://github.com/flumennigrum/gradle-avro-plugin")
+    vcsUrl.set("https://github.com/flumennigrum/gradle-avro-plugin.git")
     plugins {
         create("avroPlugin") {
             id = "io.github.flumennigrum.gradle.avro"
             implementationClass = "io.github.flumennigrum.gradle.avro.AvroGeneratorPlugin"
             displayName = "Gradle Avro Plugin"
             description = "A Gradle plugin that wraps Apache Avro to generate Java classes from .avsc files."
+            tags.set(listOf("avro", "code-generation", "java"))
         }
     }
 }
