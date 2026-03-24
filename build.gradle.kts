@@ -1,7 +1,9 @@
+import org.gradle.plugin.compatibility.compatibility
+
 plugins {
     `java-gradle-plugin`
     `maven-publish`
-    id("com.gradle.plugin-publish") version "1.2.1"
+    id("com.gradle.plugin-publish") version "2.1.1"
 }
 
 group = "io.github.flumennigrum.gradle"
@@ -32,8 +34,13 @@ gradlePlugin {
             id = "io.github.flumennigrum.gradle.avro"
             implementationClass = "io.github.flumennigrum.gradle.avro.AvroGeneratorPlugin"
             displayName = "Gradle Avro Plugin"
-            description = "A Gradle plugin that wraps Apache Avro to generate Java classes from .avsc files."
+            description = "A Gradle plugin that wraps Apache Avro Compiler to generate Java classes from .avsc files."
             tags.set(listOf("avro", "code-generation", "java"))
+            compatibility {
+                features {
+                    configurationCache = true
+                }
+            }
         }
     }
 }
@@ -44,6 +51,6 @@ tasks.withType<Test> {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11)) // Recommended baseline for Gradle 8/9
+        languageVersion.set(JavaLanguageVersion.of(11))
     }
 }

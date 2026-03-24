@@ -52,7 +52,7 @@ This task will:
 2. Generate Java classes using Avro's `SpecificCompiler`.
 3. Add the generated sources to the main Java source set.
 
-### Gradle compatibility
+## Gradle compatibility
 
 This plugin is compatible with Gradle 7.3 and later.
 
