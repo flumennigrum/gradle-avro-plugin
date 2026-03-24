@@ -4,7 +4,7 @@ Still not published
 
 # Gradle Avro Plugin
 
-A Gradle plugin that wraps Apache Avro to generate Java classes from `.avsc` files.
+A Gradle plugin that wraps Apache Avro Compiler to generate Java classes from `.avsc` files.
 
 ## Usage
 
@@ -15,6 +15,16 @@ Add the plugin to your `build.gradle.kts` file:
 ```kotlin
 plugins {
     id("io.github.flumennigrum.gradle.avro") version "0.1.0"
+}
+```
+
+Add **avro** to the dependency block in `build.gradle.kts` file:
+
+```kotlin
+dependencies {
+    // other dependencies
+    implementation("org.apache.avro:avro:AVRO_VERSION_HERE")
+    // more dependencies
 }
 ```
 
